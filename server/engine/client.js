@@ -4,12 +4,8 @@ import { Router } from 'express';
 
 const router = Router();
 
-router.get('/', (req, res) => {
-  res.render('home', {
-    title: config.homepage.title,
-    description: config.homepage.content,
-    links: config.homepage.quicklinks,
-  });
+router.post('/engine/homepage', (req, res) => {
+  res.json(config.homepage);
 });
 
 router.get('/w/:article', (req, res) => {
