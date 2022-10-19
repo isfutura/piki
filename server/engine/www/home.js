@@ -6,12 +6,7 @@ let description = document.querySelector('#description');
 let quicklinks = document.querySelector('#quicklinks');
 
 (async () => {
-  let res = await fetch('/engine/homepage', {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-    },
-  });
+  let res = await fetch('/engine/homepage');
 
   if (res.ok) {
     let data = await res.json();

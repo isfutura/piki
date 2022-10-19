@@ -4,7 +4,7 @@ import { Router } from 'express';
 
 const router = Router();
 
-router.post('/engine/homepage', (req, res) => {
+router.get('/engine/homepage', (req, res) => {
   res.json(config.homepage);
 });
 
