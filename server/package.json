@@ -1,9 +1,9 @@
 {
-  "name": "server",
-  "main": "index.js",
+  "name": "piki",
+  "main": "engine/index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    "dev": "nodemon engine/index.js",
+    "start": "node engine/index.js"
   },
   "type": "module",
   "devDependencies": {
@@ -12,8 +12,10 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
     "express": "^4.18.2",
     "helmet": "^6.0.0",
+    "markdown-it": "^13.0.1",
     "morgan": "^1.10.0"
   }
 }

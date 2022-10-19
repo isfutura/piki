@@ -1,0 +1,10 @@
+{
+  "options": {
+    "urlTitle": "piki"
+  },
+  "homepage": {
+    "title": "piki - A tiny wiki engine",
+    "content": "This wiki details the setup and use of piki.",
+    "quicklinks": ["/sample", "/sample2"]
+  }
+}

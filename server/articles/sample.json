@@ -1,0 +1,24 @@
+{
+  "creator": {
+    "ip": "7887.324877.3973",
+    "date": "1666052794883"
+  },
+  "editHistory": [
+    {
+      "date": "1666052794883",
+      "content": "This is a sample Page!",
+      "editor": {
+        "name": "Finn",
+        "ip": "85847.45892.3858"
+      }
+    },
+    {
+      "date": "1666052984852",
+      "content": "This is a sample page!",
+      "editor": {
+        "name": "Finn",
+        "ip": "85847.45892.3858"
+      }
+    }
+  ]
+}

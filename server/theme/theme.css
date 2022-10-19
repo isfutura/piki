@@ -1,0 +1,17 @@
+h1,
+p {
+  color: #000;
+}
+
+a {
+  color: #00f;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #f0f;
+}
+
+hr {
+  border-color: #000;
+}
