@@ -3,10 +3,9 @@ import { open } from 'sqlite';
 
 (async () => {
   const db = await open({
-    filename: 'testdb.db',
+    filename: 'articles/articles.db',
     driver: sqlite3.Database,
   });
-
-  const res = await db.get('SELECT col FROM tbl WHERE col = ?', ['test']);
-  console.log(res);
+  await db.exec('INSERT INTO articles VALUES ("sample", "# sample\ncool")');
+  await db.exec('INSERT INTO articles VALUES ("sample2", "# sample2\ncooler")');
 })();
