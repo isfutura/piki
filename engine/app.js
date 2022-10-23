@@ -10,12 +10,12 @@ app.use(cors());
 app.use(helmet());
 app.use(morgan('dev'));
 
-app.use('/engine/theme', express.static('theme'));
-app.use('/', express.static('engine/www'));
-
 // routes
 
 import client from './client.js';
 app.use('/', client);
+
+import api from './api.js';
+app.use('/', api);
 
 export default app;

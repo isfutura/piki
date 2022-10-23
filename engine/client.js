@@ -1,15 +1,16 @@
 import config from './configurator.js';
 
-import { Router } from 'express';
+import express from 'express';
 
-const router = Router();
+const router = express.Router();
 
-router.get('/engine/homepage', (req, res) => {
-  res.json(config.homepage);
-});
+// sets static routes for homepage and theme
 
-router.get('/w/:article', (req, res) => {
-  res.render('article', { test: req.params.article });
-});
+router.use('/engine/theme', express.static('theme'));
+router.use('/', express.static('engine/www/home'));
+
+// sets static route for article prefix definable in config.json
+
+router.use(`/${config.options.prefix}`, express.static('engine/www/article'));
 
 export default router;
