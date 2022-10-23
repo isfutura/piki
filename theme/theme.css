@@ -15,3 +15,14 @@ a:visited {
 hr {
   border-color: #000;
 }
+
+button {
+  border-color: #000;
+  color: #000;
+  background-color: transparent;
+}
+
+button:hover {
+  background-color: #000;
+  color: #fff;
+}

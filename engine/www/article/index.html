@@ -6,8 +6,16 @@
   </head>
   <body>
     <h1 class="title" id="title"></h1>
+    <span
+      ><button id="editButton">edit</button> | <button>share</button> |
+      <button>view raw</button></span
+    >
     <hr />
     <div class="description" id="articleBody"></div>
+    <div id="editor">
+      <textarea class="editor" id="textEditor"></textarea>
+      <button id="saveButton">save</button>
+    </div>
     <script src="/engine/utils/article.js"></script>
   </body>
 </html>

@@ -13,6 +13,15 @@ open({
 
 export default {
   getArticle: async name => {
-    return await db.get('SELECT content FROM articles WHERE name = ?', name);
+    const res = await db.get(
+      'SELECT content FROM articles WHERE name = ?',
+      name
+    );
+
+    if (res == undefined) return 'article does not exist';
+    else return res.content;
+  },
+  updateArticle: async (name, content) => {
+    db.run('INSERT OR REPLACE INTO articles VALUES (?, ?)', [name, content]);
   },
 };

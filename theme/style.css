@@ -11,6 +11,17 @@ body {
   margin-bottom: 0px;
 }
 
+.editor {
+  width: 100%;
+  height: 300px;
+}
+
 hr {
   border: 2px solid;
+}
+
+button {
+  border: 2px solid;
+  transition-duration: 200ms;
+  cursor: pointer;
 }
