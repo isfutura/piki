@@ -11,6 +11,6 @@ router.use('/', express.static('engine/www/home'));
 
 // sets static route for article prefix definable in config.json
 
-router.use(`/${config.options.prefix}`, express.static('engine/www/article'));
+router.use(`/${config.options.prefix}/*`, express.static('engine/www/article'));
 
 export default router;
