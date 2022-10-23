@@ -3,13 +3,14 @@
 let title = document.querySelector('#title');
 let articleBody = document.querySelector('#articleBody');
 let textEditor = document.querySelector('#textEditor');
+let editor = document.querySelector('#editor');
 
 let editButton = document.querySelector('#editButton');
 let saveButton = document.querySelector('#saveButton');
 
 // janky way of getting article title from url
 
-const articleTitle = window.location.href.match(/\/(\w+)\/[^\/]*$/)[1];
+const articleTitle = window.location.pathname.split('/')[2];
 const articleTitleSpaces = articleTitle.replace('_', ' ');
 
 console.log(window.location);
@@ -33,6 +34,9 @@ document.title = articleTitleSpaces;
 })();
 
 editButton.addEventListener('click', async () => {
+  editor.style = 'display:block;';
+  articleBody.style = 'display:none;';
+
   let res = await fetch('/engine/raw', {
     method: 'POST',
     body: JSON.stringify({ name: articleTitle }),
