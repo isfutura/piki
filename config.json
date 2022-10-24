@@ -1,7 +1,7 @@
 {
   "options": {
     "urlTitle": "piki",
-    "prefix": "w",
+    "prefix": "wiki",
     "database": "articles/articles.db",
     "empty": "This article does not exist! Try [[piki]]."
   },

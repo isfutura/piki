@@ -7,7 +7,13 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+    crossOriginOpenerPolicy: false,
+    originAgentCluster: false,
+  })
+);
 app.use(morgan('dev'));
 
 // routes
