@@ -15,7 +15,7 @@ let rawButton = document.querySelector('#rawButton');
 // janky way of getting article title from url, should probably fix
 
 const articleTitle = window.location.pathname.split('/')[2];
-const articleTitleSpaces = articleTitle.replace('_', ' ');
+const articleTitleSpaces = articleTitle.replace(/_/g, ' ');
 
 title.textContent = articleTitleSpaces;
 document.title = articleTitleSpaces;

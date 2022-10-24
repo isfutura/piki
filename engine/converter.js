@@ -11,10 +11,10 @@ export default text => {
   // converts wiki links to markdown links
 
   let linked = text.replace(/\[\[(.+?)\]\]/g, i => {
-    const e = i.replace('[[', '').replace(']]', '');
+    const e = i.replace(/\[\[/g, '').replace(/\]\]/, '');
 
-    return `[${e.replace('_', ' ')}](/${config.options.prefix}/${e.replace(
-      ' ',
+    return `[${e.replace(/_/g, ' ')}](/${config.options.prefix}/${e.replace(
+      / /g,
       '_'
     )})`;
   });
