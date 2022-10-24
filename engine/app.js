@@ -6,14 +6,9 @@ import cors from 'cors';
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 app.use(helmet());
 app.use(morgan('dev'));
-
-app.use(cors());
-app.use((req, res, next) => {
-  res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
-  next();
-});
 
 // routes
 
