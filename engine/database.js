@@ -9,7 +9,7 @@ open({
   filename: config.options.database,
   driver: sqlite3.Database,
 }).then(d => {
-  d.run('CREATE TABLE IF NOT EXISTS articles(name, content)');
+  d.run('CREATE TABLE IF NOT EXISTS articles(name, content, unique(name))');
   db = d;
 });
 
@@ -24,6 +24,7 @@ export default {
     else return res.content;
   },
   updateArticle: async (name, content) => {
+    console.log(name, content);
     db.run('INSERT OR REPLACE INTO articles VALUES (?, ?)', [name, content]);
   },
 };
