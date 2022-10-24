@@ -1,3 +1,6 @@
+// usage: express setup
+// not meant to be edited by the wiki admin, see README.md
+
 import express from 'express';
 import morgan from 'morgan';
 import helmet from 'helmet';

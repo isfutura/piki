@@ -1,3 +1,6 @@
+// usage: converting wiki links into markdown links
+// not meant to be edited by the wiki admin, see README.md
+
 import MarkdownIt from 'markdown-it';
 
 import config from './configurator.js';
@@ -6,7 +9,7 @@ const md = new MarkdownIt();
 
 export default text => {
   // converts wiki links to markdown links
-  console.log(text);
+
   let linked = text.replace(/\[\[(.+?)\]\]/g, i => {
     const e = i.replace('[[', '').replace(']]', '');
 

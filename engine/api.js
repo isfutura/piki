@@ -1,4 +1,6 @@
-import config from './configurator.js';
+// usage: api endpoints for retrieving and modifying wiki articles
+// not meant to be edited by the wiki admin, see README.md
+
 import database from './database.js';
 import convert from './converter.js';
 
@@ -11,10 +13,8 @@ const router = Router();
 router.post('/engine/get', async (req, res) => {
   const body = req.body;
   const content = await database.getArticle(body.name);
-  console.log(content);
   const converted = convert(content);
 
-  console.log(converted);
   res.json(converted);
 });
 
@@ -27,12 +27,17 @@ router.post('/engine/raw', async (req, res) => {
   res.json(content);
 });
 
+router.get('/engine/raw/:name', async (req, res) => {
+  const name = req.params.name;
+  const content = await database.getArticle(name);
+
+  res.send(content);
+});
+
 // modifies or creates new article
 
 router.post('/engine/modify', async (req, res) => {
   const body = req.body;
-
-  console.log(body);
 
   database.updateArticle(body.name, body.content).then(() => {
     res.end();

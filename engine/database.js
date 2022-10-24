@@ -1,7 +1,12 @@
+// usage: retrieving and modifying wiki articles in the database
+// not meant to be edited by the wiki admin, see README.md
+
 import config from './configurator.js';
 
 import sqlite3 from 'sqlite3';
 import { open } from 'sqlite';
+
+// opens the table or creates a new one if it doesn't exist
 
 let db;
 
@@ -14,6 +19,8 @@ open({
 });
 
 export default {
+  // retrieves an article from the database
+
   getArticle: async name => {
     const res = await db.get(
       'SELECT content FROM articles WHERE name = ?',
@@ -23,8 +30,10 @@ export default {
     if (res == undefined) return config.options.empty;
     else return res.content;
   },
+
+  // creates or modifies a wiki article
+
   updateArticle: async (name, content) => {
-    console.log(name, content);
     db.run('INSERT OR REPLACE INTO articles VALUES (?, ?)', [name, content]);
   },
 };

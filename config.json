@@ -1,8 +1,8 @@
 {
   "options": {
-    "urlTitle": "piki",
-    "prefix": "wiki",
+    "prefix": "w",
     "database": "articles/articles.db",
-    "empty": "This article does not exist! Try [[piki]]."
+    "empty": "This article does not exist! Try [[piki]].",
+    "homepage": "piki"
   }
 }

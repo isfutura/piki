@@ -1,3 +1,6 @@
+// usage: client side of the wiki
+// not meant to be edited by the wiki admin, see README.md
+
 // elements
 
 let title = document.querySelector('#title');
@@ -7,13 +10,12 @@ let editor = document.querySelector('#editor');
 
 let editButton = document.querySelector('#editButton');
 let saveButton = document.querySelector('#saveButton');
+let rawButton = document.querySelector('#rawButton');
 
-// janky way of getting article title from url
+// janky way of getting article title from url, should probably fix
 
 const articleTitle = window.location.pathname.split('/')[2];
 const articleTitleSpaces = articleTitle.replace('_', ' ');
-
-console.log(window.location);
 
 title.textContent = articleTitleSpaces;
 document.title = articleTitleSpaces;
@@ -66,4 +68,8 @@ saveButton.addEventListener('click', async () => {
   if (res.ok) {
     window.location.reload();
   }
+});
+
+rawButton.addEventListener('click', () => {
+  window.location.href = `/engine/raw/${articleTitle}`;
 });

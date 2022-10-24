@@ -1,9 +1,14 @@
 # piki
 
-micro wiki engine written in javascript
+Tiny wiki engine written in JavaScript.
 
-## how it works
+## installation and usage
 
-piki uses a sqlite database to store info about articles that the user retrieves through the web ui
+You must have Node installed to be able to run piki.
 
-everything is configurable in `config.json`
+- To start, clone the repository by running `git clone https://github.com/isfu/piki`.
+- Next, `cd` into the `piki` directory and run `npm install`.
+- Configure your wiki's settings in the `config.json` file.
+- To start the wiki, run `npm start` or `node engine/index.js`.
+
+Have fun writing your wiki!

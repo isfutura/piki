@@ -1,18 +1,22 @@
+// usage: sending static files for the client side of the wiki
+// not meant to be edited by the wiki admin, see README.md
+
 import config from './configurator.js';
 
 import express from 'express';
-
 const router = express.Router();
 
-// sets static routes for homepage and theme
+// sets static route for theme
 
 router.use('/engine/theme', express.static('theme'));
-// router.use('/', express.static('engine/www/home'));
+
+// redirects to wiki homepage
+
 router.get('/', (req, res) => {
-  res.redirect(`/${config.options.prefix}/homepage`);
+  res.redirect(`/${config.options.prefix}/${config.options.homepage}`);
 });
 
-// sets util routes
+// sets utility routes
 
 router.use('/engine/utils', express.static('engine/www/utils'));
 

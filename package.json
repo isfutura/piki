@@ -1,17 +1,16 @@
 {
   "name": "piki",
   "main": "engine/index.js",
+  "type": "module",
   "scripts": {
     "dev": "nodemon engine/index.js",
     "start": "node engine/index.js"
   },
-  "type": "module",
   "devDependencies": {
     "nodemon": "^2.0.20"
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "helmet": "^6.0.0",
     "markdown-it": "^13.0.1",

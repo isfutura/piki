@@ -1,8 +1,8 @@
+// usage: starting the app
+// not meant to be edited by the wiki admin, see README.md
+
 import app from './app.js';
 
-import dotenv from 'dotenv';
-dotenv.config();
-
-app.listen(process.env.PORT, () => {
-  console.log(`listening on http://localhost:${process.env.PORT}`);
+app.listen(80, () => {
+  console.log(`listening on http://localhost:80`);
 });
