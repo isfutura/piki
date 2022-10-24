@@ -6,16 +6,6 @@ import { Router } from 'express';
 
 const router = Router();
 
-// sends homepage data
-
-router.get('/engine/homepage', (req, res) => {
-  const combined = {
-    homepage: config.homepage,
-    prefix: config.options.prefix,
-  };
-  res.json(combined);
-});
-
 // sends article entry from database
 
 router.post('/engine/get', async (req, res) => {

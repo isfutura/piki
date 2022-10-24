@@ -7,7 +7,10 @@ const router = express.Router();
 // sets static routes for homepage and theme
 
 router.use('/engine/theme', express.static('theme'));
-router.use('/', express.static('engine/www/home'));
+// router.use('/', express.static('engine/www/home'));
+router.get('/', (req, res) => {
+  res.redirect(`/${config.options.prefix}/homepage`);
+});
 
 // sets util routes
 
